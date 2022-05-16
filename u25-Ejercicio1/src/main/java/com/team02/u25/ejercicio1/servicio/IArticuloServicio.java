@@ -26,8 +26,6 @@ public interface IArticuloServicio {
 		
 		public Articulo articuloXID(Long id); //Leer datos de un articulo READ
 		
-		public List<Articulo> listarArticuloNomnbre(String nombre);//Listar articulos por campo nombre
-		
 		public Articulo actualizarArticulo(Articulo articulo); //Actualiza datos del articulo UPDATE
 		
 		public void eliminarArticulo(Long id);// Elimina el articulo DELETE

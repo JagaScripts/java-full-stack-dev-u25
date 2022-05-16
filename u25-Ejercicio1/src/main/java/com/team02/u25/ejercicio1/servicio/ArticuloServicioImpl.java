@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.team02.u25.ejercicio1.dto.Articulo;
-import com.team02.u25.ejercicio1.dto.IArticuloDAO;
+import com.team02.u25.ejercicio1.dao.IArticuloDAO;
 
 /**
  * ArticuloServicioImpl.java
@@ -42,10 +42,6 @@ public class ArticuloServicioImpl implements IArticuloServicio {
 		return iArticuloDAO.findById(id).get();
 	}
 
-	@Override
-	public List<Articulo> listarArticuloNomnbre(String nombre) {
-		return iArticuloDAO.findByNombre(nombre);
-	}
 
 	@Override
 	public Articulo actualizarArticulo(Articulo articulo) {
@@ -55,7 +51,7 @@ public class ArticuloServicioImpl implements IArticuloServicio {
 
 	@Override
 	public void eliminarArticulo(Long id) {
-		return iArticuloDAO.deleteById(id);
+		iArticuloDAO.deleteById(id);
 
 	}
 

@@ -35,7 +35,7 @@ public class FabricanteServicioImpl implements IFabricanteServicio {
 
 	@Override
 	public Fabricante guardarFabricante(Fabricante fabricante) {
-		return iFabricanteDAO.save(fabricante)
+		return iFabricanteDAO.save(fabricante);
 	}
 
 	@Override
@@ -43,10 +43,6 @@ public class FabricanteServicioImpl implements IFabricanteServicio {
 		return iFabricanteDAO.findById(id).get();
 	}
 
-	@Override
-	public List<Fabricante> listarFabricanteNomnbre(String nombre) {
-		return iFabricanteDAO.findByNombre(nombre);
-	}
 
 	@Override
 	public Fabricante actualizarFabricante(Fabricante fabricante) {
@@ -55,7 +51,7 @@ public class FabricanteServicioImpl implements IFabricanteServicio {
 
 	@Override
 	public void eliminarFabricante(Long id) {
-		return iFabricanteDAO.deleteById(id);
+		iFabricanteDAO.deleteById(id);
 
 	}
 
