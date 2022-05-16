@@ -27,8 +27,6 @@ public interface IFabricanteServicio {
 			
 			public Fabricante fabricanteXID(Long id); //Leer datos de un fabricante READ
 			
-			public List<Fabricante> listarFabricanteNomnbre(String nombre);//Listar fabricantes por campo nombre
-			
 			public Fabricante actualizarFabricante(Fabricante fabricante); //Actualiza datos del fabricante UPDATE
 			
 			public void eliminarFabricante(Long id);// Elimina el fabricante DELETE
