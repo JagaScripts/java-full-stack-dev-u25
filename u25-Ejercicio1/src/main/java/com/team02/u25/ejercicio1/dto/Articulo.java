@@ -16,28 +16,28 @@ public class Articulo {
 	//Atributos Articulo
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // busca ultimo valor e incrementa desde id final de db
-	private Long id;
+	private int id;
 	@Column(name = "nombre") 
 	private String nombre;
 	@Column(name = "precio") 
 	private int precio;
 	
 	@ManyToOne
-	@JoinColumn(name="fabricante_id")
+	@JoinColumn(name="id_fabricante")
 	private Fabricante fabricante;
 
-	public Articulo(Long id, String nombre, int precio, Fabricante fabricante) {
+	public Articulo(int id, String nombre, int precio, Fabricante fabricante) {
 		this.id = id;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.fabricante = fabricante;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
