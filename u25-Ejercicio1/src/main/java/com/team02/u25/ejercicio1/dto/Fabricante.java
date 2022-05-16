@@ -30,6 +30,9 @@ public class Fabricante {
 	@JoinColumn(name = "id")
 	private List<Articulo> articulo;
 	
+	public Fabricante() {
+		this.nombre = "";
+	}
 	
 	public Fabricante(String nombre) {
 		this.nombre = nombre;
