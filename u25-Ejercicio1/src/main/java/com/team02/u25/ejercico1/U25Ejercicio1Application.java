@@ -1,4 +1,4 @@
-package com.team02.u24;
+package com.team02.u25.ejercico1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
