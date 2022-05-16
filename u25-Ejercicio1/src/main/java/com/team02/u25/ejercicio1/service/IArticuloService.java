@@ -7,7 +7,7 @@
  * 
  * Fecha de creación 16/05/2022
  */
-package com.team02.u25.ejercicio1.servicio;
+package com.team02.u25.ejercicio1.service;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import com.team02.u25.ejercicio1.dto.Articulo;
  * IArticuloServicio.java
  *
  */
-public interface IArticuloServicio {
+public interface IArticuloService {
 
 	//Metodos del CRUD
 		public List<Articulo> listarArticulos(); //Listar All 

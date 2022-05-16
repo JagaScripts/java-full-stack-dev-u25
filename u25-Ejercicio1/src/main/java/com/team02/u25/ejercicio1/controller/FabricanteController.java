@@ -13,23 +13,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.team02.u25.ejercicio1.dto.Fabricante;
+import com.team02.u25.ejercicio1.service.FabricanteServiceImpl;
 
 @RestController
 @RequestMapping("/api")
 public class FabricanteController {
 
 	@Autowired
-	FabrianteServiceImpl fabrianteServiceImpl;
+	FabricanteServiceImpl fabricanteServiceImpl;
 
 	@GetMapping("/fabricante")
 	public List<Fabricante> listarFabricantes() {
-		return fabrianteServiceImpl.listarClientes();
+		return fabricanteServiceImpl.listarFabricantes();
 	}
 
 	@PostMapping("/fabricante")
 	public Fabricante salvarFabricante(@RequestBody Fabricante fabricante) {
 
-		return fabrianteServiceImpl.guardarFabricante(fabricante);
+		return fabricanteServiceImpl.guardarFabricante(fabricante);
 	}
 
 	@GetMapping("/fabricante/{id}")
@@ -37,7 +38,7 @@ public class FabricanteController {
 
 		Fabricante fabricante_xid = new Fabricante();
 
-		fabricante_xid = fabricanteServiceImpl.clienteXID(id);
+		fabricante_xid = fabricanteServiceImpl.fabricanteXID(id);
 
 		System.out.println("Fabricande id: " + fabricante_xid);
 
@@ -50,11 +51,11 @@ public class FabricanteController {
 		Fabricante fabricante_seleccionado = new Fabricante();
 		Fabricante fabricante_actualizado = new Fabricante();
 
-		fabricante_seleccionado = fabrianteServiceImpl.clienteXID(id);
+		fabricante_seleccionado = fabricanteServiceImpl.fabricanteXID(id);
 
 		fabricante_seleccionado.setNombre(fabricante.getNombre());
 
-		fabricante_actualizado = fabrianteServiceImpl.actualizarCliente(fabricante_seleccionado);
+		fabricante_actualizado = fabricanteServiceImpl.actualizarFabricante(fabricante_seleccionado);
 
 		System.out.println("El fabricante actualizado es: " + fabricante_seleccionado);
 
@@ -63,7 +64,7 @@ public class FabricanteController {
 	
 	@DeleteMapping("/fabricante/{id}")
 	public void eleiminarFabricante(@PathVariable(name="id")Long id) {
-		fabrianteServiceImpl.eliminarFabricante(id);
+		fabricanteServiceImpl.eliminarFabricante(id);
 	}
 
 }
