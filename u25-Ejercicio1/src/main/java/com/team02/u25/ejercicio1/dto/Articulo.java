@@ -1,4 +1,4 @@
-package com.team02.u24.dto;
+package com.team02.u25.ejercicio1.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
