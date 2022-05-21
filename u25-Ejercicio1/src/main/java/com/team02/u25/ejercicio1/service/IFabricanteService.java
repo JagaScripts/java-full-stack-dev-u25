@@ -11,7 +11,6 @@ package com.team02.u25.ejercicio1.service;
 
 import java.util.List;
 
-import com.team02.u25.ejercicio1.dto.Articulo;
 import com.team02.u25.ejercicio1.dto.Fabricante;
 
 /**
