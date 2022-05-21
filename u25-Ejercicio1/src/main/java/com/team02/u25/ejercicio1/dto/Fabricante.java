@@ -60,7 +60,7 @@ public class Fabricante {
 
 
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Articulo")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "articulo")
 	public List<Articulo> getArticulo() {
 		return articulo;
 	}
