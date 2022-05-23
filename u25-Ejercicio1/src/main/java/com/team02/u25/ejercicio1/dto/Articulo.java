@@ -16,7 +16,7 @@ public class Articulo {
 	//Atributos Articulo
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // busca ultimo valor e incrementa desde id final de db
-	private int id;
+	private int codigo;
 	@Column(name = "nombre") 
 	private String nombre;
 	@Column(name = "precio") 
@@ -25,20 +25,24 @@ public class Articulo {
 	@ManyToOne
 	@JoinColumn(name="id_fabricante")
 	private Fabricante fabricante;
+	
+	public Articulo() {
+		
+	}
 
-	public Articulo(int id, String nombre, int precio, Fabricante fabricante) {
-		this.id = id;
+	public Articulo(int codigo, String nombre, int precio, Fabricante fabricante) {
+		this.codigo = codigo;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.fabricante = fabricante;
 	}
 
-	public int getId() {
-		return id;
+	public int getCodigo() {
+		return codigo;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getNombre() {
@@ -67,7 +71,7 @@ public class Articulo {
 
 	@Override
 	public String toString() {
-		return "Articulo [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", fabricante=" + fabricante + "]";
+		return "Articulo [codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + ", fabricante=" + fabricante + "]";
 	}
 	
 	

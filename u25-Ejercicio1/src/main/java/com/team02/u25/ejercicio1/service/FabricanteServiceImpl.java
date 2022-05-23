@@ -39,8 +39,8 @@ public class FabricanteServiceImpl implements IFabricanteService {
 	}
 
 	@Override
-	public Fabricante fabricanteXID(Long id) {
-		return iFabricanteDAO.findById(id).get();
+	public Fabricante fabricanteXID(int codigo) {
+		return iFabricanteDAO.findById(codigo).get();
 	}
 
 
@@ -50,8 +50,8 @@ public class FabricanteServiceImpl implements IFabricanteService {
 	}
 
 	@Override
-	public void eliminarFabricante(Long id) {
-		iFabricanteDAO.deleteById(id);
+	public void eliminarFabricante(int codigo) {
+		iFabricanteDAO.deleteById(codigo);
 
 	}
 

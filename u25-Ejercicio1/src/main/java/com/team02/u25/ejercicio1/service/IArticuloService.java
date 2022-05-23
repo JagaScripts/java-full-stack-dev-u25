@@ -24,10 +24,10 @@ public interface IArticuloService {
 		
 		public Articulo guardarArticulo(Articulo articulo);	//Guarda un articulo CREATE
 		
-		public Articulo articuloXID(Long id); //Leer datos de un articulo READ
+		public Articulo articuloXID(int codigo); //Leer datos de un articulo READ
 		
 		public Articulo actualizarArticulo(Articulo articulo); //Actualiza datos del articulo UPDATE
 		
-		public void eliminarArticulo(Long id);// Elimina el articulo DELETE
+		public void eliminarArticulo(int codigo);// Elimina el articulo DELETE
 	
 }
