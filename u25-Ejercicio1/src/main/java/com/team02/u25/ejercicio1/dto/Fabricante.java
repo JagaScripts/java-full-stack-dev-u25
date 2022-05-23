@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -22,6 +20,7 @@ public class Fabricante {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "codigo") 
 	private int codigo;
 	@Column(name = "nombre")
 	private String nombre;
@@ -40,12 +39,12 @@ public class Fabricante {
 	}
 
 
-	public int getcodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
 
-	public void setcodigo(int codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
@@ -62,13 +61,13 @@ public class Fabricante {
 
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "articulo")
-	public List<Articulo> getArticulo() {
+	public List<Articulo> getArticulos() {
 		return articulos;
 	}
 
 
-	public void setArticulo(List<Articulo> articulo) {
-		this.articulos = articulo;
+	public void setArticulos(List<Articulo> articulos) {
+		this.articulos = articulos;
 	}
 
 

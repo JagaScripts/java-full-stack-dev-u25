@@ -16,6 +16,7 @@ public class Articulo {
 	//Atributos Articulo
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "codigo") 
 	private int codigo;
 	@Column(name = "nombre") 
 	private String nombre;
