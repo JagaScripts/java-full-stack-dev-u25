@@ -17,6 +17,7 @@ public class Articulo {
 	@Id
 	//añadir variables
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "codigo") 
 	private int codigo;
 	@Column(name = "nombre") 
 	private String nombre;
