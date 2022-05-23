@@ -16,7 +16,7 @@ import com.team02.u25.ejercicio1.dto.Fabricante;
 import com.team02.u25.ejercicio1.service.FabricanteServiceImpl;
 
 @RestController
-@RequestMapping("/fabricantes")
+@RequestMapping("/fabricante")
 public class FabricanteController {
 
 	@Autowired

@@ -31,7 +31,7 @@ import com.team02.u25.ejercicio1.service.ArticuloServiceImpl;
  *
  */
 @RestController
-@RequestMapping("/articulos")
+@RequestMapping("/articulo")
 public class ArticuloController {
 
 	@Autowired

@@ -15,7 +15,7 @@ public class Articulo {
 
 	//Atributos Articulo
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // busca ultimo valor e incrementa desde id final de db
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
 	@Column(name = "nombre") 
 	private String nombre;
@@ -23,7 +23,7 @@ public class Articulo {
 	private int precio;
 	
 	@ManyToOne
-	@JoinColumn(name="id_fabricante")
+	@JoinColumn(name="codigo_fabricante")
 	private Fabricante fabricante;
 	
 	public Articulo() {
