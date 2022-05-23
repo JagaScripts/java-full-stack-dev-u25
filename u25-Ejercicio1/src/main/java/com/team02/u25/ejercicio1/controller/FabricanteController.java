@@ -21,18 +21,18 @@ public class FabricanteController {
 
 	@Autowired
 	FabricanteServiceImpl fabricanteServiceImpl;
-
+	//listar fabricante
 	@GetMapping("/")
 	public List<Fabricante> listarFabricantes() {
 		return fabricanteServiceImpl.listarFabricantes();
 	}
-
+	//salvar fabricante
 	@PostMapping("/")
 	public Fabricante salvarFabricante(@RequestBody Fabricante fabricante) {
 
 		return fabricanteServiceImpl.guardarFabricante(fabricante);
 	}
-
+	// añadir fabricante
 	@GetMapping("/{codigo}")
 	public Fabricante fabricanteXID(@PathVariable(name = "codigo") int codigo) {
 
@@ -43,7 +43,7 @@ public class FabricanteController {
 
 		return fabricante_xid;
 	}
-
+	//actualizar el fabricante
 	@PutMapping("/{codigo}")
 	public Fabricante actualizarFabricante(@PathVariable(name = "codigo") int codigo, @RequestBody Fabricante fabricante) {
 
@@ -59,7 +59,7 @@ public class FabricanteController {
 
 		return fabricante_actualizado;
 	}
-	
+	//eliminar fabricante
 	@DeleteMapping("/{codigo}")
 	public void eleiminarFabricante(@PathVariable(name="codigo")int codigo) {
 		fabricanteServiceImpl.eliminarFabricante(codigo);

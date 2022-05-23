@@ -15,6 +15,7 @@ public class Articulo {
 
 	//Atributos Articulo
 	@Id
+	//añadir variables
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
 	@Column(name = "nombre") 
@@ -29,7 +30,7 @@ public class Articulo {
 	public Articulo() {
 		
 	}
-
+	//añadir articulo
 	public Articulo(int codigo, String nombre, int precio, Fabricante fabricante) {
 		this.codigo = codigo;
 		this.nombre = nombre;
