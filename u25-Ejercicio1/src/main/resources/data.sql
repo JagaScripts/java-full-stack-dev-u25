@@ -1,22 +1,21 @@
-DROP TABLE IF EXISTS fabricante;
-DROP table IF EXISTS articulo;
+DROP TABLE IF EXISTS `fabricante`;
+DROP TABLE IF EXISTS `articulo`;
 
-create table fabricante(
-id int auto_increment,
-nombre varchar(100),
-primary key(id)
+CREATE TABLE `fabricante`(
+`codigo` INT auto_increment,
+`nombre` varchar(100),
+PRIMARY KEY (`codigo`)
 );
 
-create table articulo(
-id int auto_increment,
-nombre varchar(100),
-precio int,
-id_fabricante int,
-primary key(id),
-foreign key(id_fabricante) references fabricante(id)
-on delete restrict on update cascade
+INSERT INTO `fabricante` (`codigo`, `nombre`) VALUES (default,'Sony'),(default,'Creative Labs'),(default,'Hewlett-Packard'),(default,'Iomega'),(default,'Fujitsu'),(default,'Winchester');
+
+CREATE TABLE `articulo`(
+`codigo` INT auto_increment,
+`nombre` varchar(100),
+`precio` INT,
+`id_fabricante` INT,
+PRIMARY KEY (`codigo`)
+CONSTRAINT `fabricante_fk` FOREIGN KEY (`id_fabricante`) REFERENCES `fabricante` (`codigo`)
 );
 
-INSERT INTO fabricante VALUES ('Sony'),('Creative Labs'),('Hewlett-Packard'),('Iomega'),('Fujitsu'),('Winchester');
-
-INSERT INTO articulo VALUES ('Hard drive',240,5),('Memory',120,6),('ZIP drive',150,4),('Floppy disk',5,6),('Monitor',240,1),('DVD drive',180,2),('CD drive',90,2),('Printer',270,3),('Toner cartridge',66,3),('DVD burner',180,2);
+INSERT INTO `articulo` (`codigo`, `nombre`, `precio`, `id_fabricante`) VALUES (default,'Hard drive',240,5),(default,'Memory',120,6),(default,'ZIP drive',150,4),(default,'Floppy disk',5,6),(default,'Monitor',240,1),(default,'DVD drive',180,2),(default,'CD drive',90,2),(default,'Printer',270,3),(default,'Toner cartridge',66,3),(default,'DVD burner',180,2);

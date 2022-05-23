@@ -38,8 +38,8 @@ public class ArticuloServiceImpl implements IArticuloService {
 	}
 
 	@Override
-	public Articulo articuloXID(Long id) {
-		return iArticuloDAO.findById(id).get();
+	public Articulo articuloXID(int codigo) {
+		return iArticuloDAO.findById(codigo).get();
 	}
 
 
@@ -50,8 +50,8 @@ public class ArticuloServiceImpl implements IArticuloService {
 	}
 
 	@Override
-	public void eliminarArticulo(Long id) {
-		iArticuloDAO.deleteById(id);
+	public void eliminarArticulo(int codigo) {
+		iArticuloDAO.deleteById(codigo);
 
 	}
 

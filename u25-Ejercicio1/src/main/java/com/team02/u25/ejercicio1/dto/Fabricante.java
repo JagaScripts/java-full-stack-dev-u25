@@ -22,30 +22,31 @@ public class Fabricante {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int codigo;
 	@Column(name = "nombre")
 	private String nombre;
 
 	@OneToMany
-	@JoinColumn(name = "id")
-	private List<Articulo> articulo;
+	@JoinColumn(name = "codigo")
+	private List<Articulo> articulos;
 	
 	public Fabricante() {
-		this.nombre = "";
+		
 	}
 	
-	public Fabricante(String nombre) {
+	public Fabricante(int codigo, String nombre) {
 		this.nombre = nombre;
+		this.codigo = codigo;
 	}
 
 
-	public long getId() {
-		return id;
+	public int getcodigo() {
+		return codigo;
 	}
 
 
-	public void setId(int id) {
-		this.id = id;
+	public void setcodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
 
@@ -62,18 +63,18 @@ public class Fabricante {
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "articulo")
 	public List<Articulo> getArticulo() {
-		return articulo;
+		return articulos;
 	}
 
 
 	public void setArticulo(List<Articulo> articulo) {
-		this.articulo = articulo;
+		this.articulos = articulo;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Fabricante [id=" + id + ", nombre=" + nombre + "]";
+		return "Fabricante [codigo=" + codigo + ", nombre=" + nombre + "]";
 	}
 	
 	

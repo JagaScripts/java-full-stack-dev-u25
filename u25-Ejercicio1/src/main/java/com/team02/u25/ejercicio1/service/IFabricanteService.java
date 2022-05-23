@@ -24,10 +24,10 @@ public interface IFabricanteService {
 			
 			public Fabricante guardarFabricante(Fabricante fabricante);	//Guarda un fabricante CREATE
 			
-			public Fabricante fabricanteXID(Long id); //Leer datos de un fabricante READ
+			public Fabricante fabricanteXID(int codigo); //Leer datos de un fabricante READ
 			
 			public Fabricante actualizarFabricante(Fabricante fabricante); //Actualiza datos del fabricante UPDATE
 			
-			public void eliminarFabricante(Long id);// Elimina el fabricante DELETE
+			public void eliminarFabricante(int codigo);// Elimina el fabricante DELETE
 	
 }
